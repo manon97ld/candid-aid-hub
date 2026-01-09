@@ -1,9 +1,12 @@
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 import { useState } from "react";
+import { useAuth } from "@/contexts/AuthContext";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user } = useAuth();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
@@ -36,11 +39,26 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link to="/inscription" className="btn-gold">
-              Voir les formules
-            </Link>
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            {user ? (
+              <Link to="/app" className="btn-gold">
+                Mon espace
+              </Link>
+            ) : (
+              <>
+                <Link 
+                  to="/auth" 
+                  className="flex items-center gap-2 text-navy font-medium hover:text-gold transition-colors"
+                >
+                  <LogIn className="w-4 h-4" />
+                  Connexion
+                </Link>
+                <Link to="/inscription" className="btn-gold">
+                  Voir les formules
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -68,9 +86,21 @@ const Header = () => {
               <a href="#contact" className="text-navy/80 hover:text-navy transition-colors font-medium py-2">
                 Contact
               </a>
-              <Link to="/inscription" className="btn-gold text-center mt-2">
-                Voir les formules
-              </Link>
+              {user ? (
+                <Link to="/app" className="btn-gold text-center mt-2">
+                  Mon espace
+                </Link>
+              ) : (
+                <>
+                  <Link to="/auth" className="text-navy font-medium py-2 flex items-center gap-2">
+                    <LogIn className="w-4 h-4" />
+                    Connexion
+                  </Link>
+                  <Link to="/inscription" className="btn-gold text-center mt-2">
+                    Voir les formules
+                  </Link>
+                </>
+              )}
             </nav>
           </div>
         )}

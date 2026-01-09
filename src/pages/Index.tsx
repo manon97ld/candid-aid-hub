@@ -27,6 +27,7 @@ const Index = () => {
       <ContactSection />
       <CTASection />
       <Footer />
+      <WelcomeAgent />
     </div>
   );
 };
