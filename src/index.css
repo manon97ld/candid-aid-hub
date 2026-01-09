@@ -1,96 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
+    /* Candid'aide Brand Colors */
+    --navy: 222 47% 11%;
+    --navy-light: 222 35% 20%;
+    --gold: 38 92% 50%;
+    --gold-light: 38 92% 65%;
+    --gold-dark: 38 92% 40%;
+    
+    /* Background & Foreground */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 38 92% 50%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 38 92% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Success/Warning */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 11%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Sidebar */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 38 92% 50%;
+    --sidebar-primary-foreground: 222 47% 11%;
+    --sidebar-accent: 222 35% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 222 35% 20%;
+    --sidebar-ring: 38 92% 50%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 222 47% 11%;
+    --foreground: 0 0% 100%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 222 35% 15%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 222 35% 15%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 222 47% 11%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 222 35% 20%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 222 35% 20%;
+    --muted-foreground: 220 14% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 222 35% 20%;
+    --input: 222 35% 20%;
+    --ring: 38 92% 50%;
   }
 }
 
@@ -98,8 +96,232 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  /* Button Gold Primary */
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 
+           bg-gold text-navy font-semibold rounded-lg
+           hover:bg-gold-light transition-all duration-300
+           shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-gold-outline {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           border-2 border-gold text-gold font-semibold rounded-lg
+           hover:bg-gold hover:text-navy transition-all duration-300;
+  }
+
+  .btn-navy {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-navy text-white font-semibold rounded-lg
+           hover:bg-navy-light transition-all duration-300
+           shadow-md hover:shadow-lg;
+  }
+
+  /* Section Badge */
+  .section-badge {
+    @apply inline-flex items-center gap-2 px-4 py-1.5
+           rounded-full text-sm font-medium
+           bg-gold/10 text-gold border border-gold/20;
+  }
+
+  .section-badge-navy {
+    @apply inline-flex items-center gap-2 px-4 py-1.5
+           rounded-full text-sm font-medium
+           bg-white/10 text-white/90 border border-white/20;
+  }
+
+  /* Card Styles */
+  .card-candidaide {
+    @apply bg-white rounded-xl border border-gray-100 
+           shadow-sm hover:shadow-md transition-all duration-300
+           p-6;
+  }
+
+  .card-pricing {
+    @apply bg-white rounded-2xl border-2 border-gray-100
+           shadow-lg p-6 relative overflow-hidden
+           transition-all duration-300 hover:border-gold/50;
+  }
+
+  .card-pricing-featured {
+    @apply bg-navy text-white rounded-2xl border-2 border-gold
+           shadow-xl p-6 relative overflow-hidden scale-105
+           transform;
+  }
+
+  /* Hero section with navy background */
+  .hero-section {
+    @apply bg-navy text-white relative overflow-hidden;
+  }
+
+  /* Partner card in hero */
+  .partner-card {
+    @apply bg-white/5 backdrop-blur-sm rounded-2xl p-6 
+           border border-white/10;
+  }
+
+  /* Form Input Styles */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-200
+           focus:border-gold focus:ring-2 focus:ring-gold/20
+           transition-all duration-200 outline-none;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+
+  /* Tunnel Progress */
+  .tunnel-step {
+    @apply flex items-center justify-center w-10 h-10 rounded-full
+           text-sm font-semibold transition-all duration-300;
+  }
+
+  .tunnel-step-active {
+    @apply bg-gold text-navy;
+  }
+
+  .tunnel-step-completed {
+    @apply bg-green-500 text-white;
+  }
+
+  .tunnel-step-pending {
+    @apply bg-gray-200 text-gray-500;
+  }
+
+  /* FAQ Accordion */
+  .faq-item {
+    @apply border-b border-gray-200 py-4;
+  }
+
+  /* Testimonial Card */
+  .testimonial-card {
+    @apply bg-white rounded-xl p-6 border border-gray-100
+           shadow-sm;
+  }
+
+  /* Stats in hero */
+  .stat-item {
+    @apply flex flex-col items-center;
+  }
+
+  .stat-value {
+    @apply text-2xl font-bold text-gold;
+  }
+
+  .stat-label {
+    @apply text-sm text-white/70;
+  }
+
+  /* Contact Buttons */
+  .contact-btn {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg
+           font-medium transition-all duration-200;
+  }
+
+  .contact-btn-primary {
+    @apply bg-navy text-white hover:bg-navy-light;
+  }
+
+  .contact-btn-whatsapp {
+    @apply bg-green-500 text-white hover:bg-green-600;
+  }
+
+  .contact-btn-email {
+    @apply bg-navy text-white hover:bg-navy-light;
+  }
+
+  .contact-btn-facebook {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+
+  .contact-btn-instagram {
+    @apply bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 
+           text-white hover:opacity-90;
+  }
+
+  /* Service Mode Cards for Tunnel */
+  .mode-card {
+    @apply bg-white rounded-2xl border-2 border-gray-100 p-6
+           cursor-pointer transition-all duration-300
+           hover:border-gold/50 hover:shadow-lg;
+  }
+
+  .mode-card-selected {
+    @apply border-gold shadow-lg ring-2 ring-gold/20;
+  }
+
+  /* Password Strength */
+  .password-strength-bar {
+    @apply h-1.5 rounded-full transition-all duration-300;
+  }
+
+  /* Upload Zone */
+  .upload-zone {
+    @apply border-2 border-dashed border-gray-300 rounded-xl p-8
+           text-center cursor-pointer transition-all duration-300
+           hover:border-gold hover:bg-gold/5;
+  }
+
+  .upload-zone-active {
+    @apply border-gold bg-gold/10;
+  }
+
+  /* Skills Tag */
+  .skill-tag {
+    @apply inline-flex items-center gap-1 px-3 py-1 
+           bg-gold/10 text-gold-dark rounded-full text-sm font-medium;
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    @apply h-2 bg-gray-200 rounded-full overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-gold rounded-full transition-all duration-500;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-navy {
+    background: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy-light)) 100%);
+  }
+
+  .shadow-gold {
+    box-shadow: 0 4px 20px -2px hsla(var(--gold), 0.3);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }
