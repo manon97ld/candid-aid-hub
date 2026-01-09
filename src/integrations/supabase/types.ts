@@ -14,16 +14,465 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      candidats: {
+        Row: {
+          acces_forem: string | null
+          acces_sites_emploi: string | null
+          assistant_id: string | null
+          categories_permis: string[] | null
+          certificats_url: string | null
+          communes_recherchees: string[] | null
+          competences_autres: string | null
+          competences_techniques: string | null
+          comptes_a_utiliser: string | null
+          consentements: Json | null
+          created_at: string
+          cv_url: string | null
+          diplomes_url: string | null
+          disponibilite: string | null
+          distance_max: number | null
+          experiences: Json | null
+          formations: Json | null
+          frequence_suivi: string | null
+          horaires_acceptes: string[] | null
+          id: string
+          identifiants_forem: string | null
+          lettre_motivation_url: string | null
+          metiers_custom: string | null
+          metiers_exclus: string | null
+          metiers_recherches: string[] | null
+          mode_service: Database["public"]["Enums"]["service_mode"]
+          moments_disponibles: string[] | null
+          moyens_contact: string[] | null
+          niveau_etude: string[] | null
+          permis_conduire: boolean | null
+          plan_type: string | null
+          preavis: boolean | null
+          progression_profil: number | null
+          salaire_souhaite: string[] | null
+          secteurs_recherches: string[] | null
+          sites_emploi: string[] | null
+          situation_professionnelle: string[] | null
+          source_decouverte: string[] | null
+          statut: string | null
+          stripe_customer_id: string | null
+          stripe_subscription_id: string | null
+          taches_a_eviter: string[] | null
+          types_contrat: string[] | null
+          updated_at: string
+          user_id: string
+          utiliser_comptes_existants: string | null
+          vehicule_personnel: boolean | null
+        }
+        Insert: {
+          acces_forem?: string | null
+          acces_sites_emploi?: string | null
+          assistant_id?: string | null
+          categories_permis?: string[] | null
+          certificats_url?: string | null
+          communes_recherchees?: string[] | null
+          competences_autres?: string | null
+          competences_techniques?: string | null
+          comptes_a_utiliser?: string | null
+          consentements?: Json | null
+          created_at?: string
+          cv_url?: string | null
+          diplomes_url?: string | null
+          disponibilite?: string | null
+          distance_max?: number | null
+          experiences?: Json | null
+          formations?: Json | null
+          frequence_suivi?: string | null
+          horaires_acceptes?: string[] | null
+          id?: string
+          identifiants_forem?: string | null
+          lettre_motivation_url?: string | null
+          metiers_custom?: string | null
+          metiers_exclus?: string | null
+          metiers_recherches?: string[] | null
+          mode_service?: Database["public"]["Enums"]["service_mode"]
+          moments_disponibles?: string[] | null
+          moyens_contact?: string[] | null
+          niveau_etude?: string[] | null
+          permis_conduire?: boolean | null
+          plan_type?: string | null
+          preavis?: boolean | null
+          progression_profil?: number | null
+          salaire_souhaite?: string[] | null
+          secteurs_recherches?: string[] | null
+          sites_emploi?: string[] | null
+          situation_professionnelle?: string[] | null
+          source_decouverte?: string[] | null
+          statut?: string | null
+          stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
+          taches_a_eviter?: string[] | null
+          types_contrat?: string[] | null
+          updated_at?: string
+          user_id: string
+          utiliser_comptes_existants?: string | null
+          vehicule_personnel?: boolean | null
+        }
+        Update: {
+          acces_forem?: string | null
+          acces_sites_emploi?: string | null
+          assistant_id?: string | null
+          categories_permis?: string[] | null
+          certificats_url?: string | null
+          communes_recherchees?: string[] | null
+          competences_autres?: string | null
+          competences_techniques?: string | null
+          comptes_a_utiliser?: string | null
+          consentements?: Json | null
+          created_at?: string
+          cv_url?: string | null
+          diplomes_url?: string | null
+          disponibilite?: string | null
+          distance_max?: number | null
+          experiences?: Json | null
+          formations?: Json | null
+          frequence_suivi?: string | null
+          horaires_acceptes?: string[] | null
+          id?: string
+          identifiants_forem?: string | null
+          lettre_motivation_url?: string | null
+          metiers_custom?: string | null
+          metiers_exclus?: string | null
+          metiers_recherches?: string[] | null
+          mode_service?: Database["public"]["Enums"]["service_mode"]
+          moments_disponibles?: string[] | null
+          moyens_contact?: string[] | null
+          niveau_etude?: string[] | null
+          permis_conduire?: boolean | null
+          plan_type?: string | null
+          preavis?: boolean | null
+          progression_profil?: number | null
+          salaire_souhaite?: string[] | null
+          secteurs_recherches?: string[] | null
+          sites_emploi?: string[] | null
+          situation_professionnelle?: string[] | null
+          source_decouverte?: string[] | null
+          statut?: string | null
+          stripe_customer_id?: string | null
+          stripe_subscription_id?: string | null
+          taches_a_eviter?: string[] | null
+          types_contrat?: string[] | null
+          updated_at?: string
+          user_id?: string
+          utiliser_comptes_existants?: string | null
+          vehicule_personnel?: boolean | null
+        }
+        Relationships: []
+      }
+      candidatures: {
+        Row: {
+          assistant_id: string | null
+          candidat_id: string
+          created_at: string
+          cv_utilise_url: string | null
+          date_envoi: string | null
+          id: string
+          lettre_url: string | null
+          mode_envoi: string | null
+          notes: string | null
+          offre_id: string
+          raisons_matching: Json | null
+          reponse_recruteur: string | null
+          score_matching: number | null
+          statut: Database["public"]["Enums"]["candidature_statut"] | null
+          updated_at: string
+        }
+        Insert: {
+          assistant_id?: string | null
+          candidat_id: string
+          created_at?: string
+          cv_utilise_url?: string | null
+          date_envoi?: string | null
+          id?: string
+          lettre_url?: string | null
+          mode_envoi?: string | null
+          notes?: string | null
+          offre_id: string
+          raisons_matching?: Json | null
+          reponse_recruteur?: string | null
+          score_matching?: number | null
+          statut?: Database["public"]["Enums"]["candidature_statut"] | null
+          updated_at?: string
+        }
+        Update: {
+          assistant_id?: string | null
+          candidat_id?: string
+          created_at?: string
+          cv_utilise_url?: string | null
+          date_envoi?: string | null
+          id?: string
+          lettre_url?: string | null
+          mode_envoi?: string | null
+          notes?: string | null
+          offre_id?: string
+          raisons_matching?: Json | null
+          reponse_recruteur?: string | null
+          score_matching?: number | null
+          statut?: Database["public"]["Enums"]["candidature_statut"] | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "candidatures_candidat_id_fkey"
+            columns: ["candidat_id"]
+            isOneToOne: false
+            referencedRelation: "candidats"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "candidatures_offre_id_fkey"
+            columns: ["offre_id"]
+            isOneToOne: false
+            referencedRelation: "offres"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      journal_activite: {
+        Row: {
+          created_at: string
+          details: Json | null
+          id: string
+          type_action: Database["public"]["Enums"]["activity_type"]
+          user_id: string
+          visible_candidat: boolean | null
+        }
+        Insert: {
+          created_at?: string
+          details?: Json | null
+          id?: string
+          type_action: Database["public"]["Enums"]["activity_type"]
+          user_id: string
+          visible_candidat?: boolean | null
+        }
+        Update: {
+          created_at?: string
+          details?: Json | null
+          id?: string
+          type_action?: Database["public"]["Enums"]["activity_type"]
+          user_id?: string
+          visible_candidat?: boolean | null
+        }
+        Relationships: []
+      }
+      messages: {
+        Row: {
+          content: string
+          created_at: string
+          id: string
+          read_at: string | null
+          receiver_id: string
+          sender_id: string
+        }
+        Insert: {
+          content: string
+          created_at?: string
+          id?: string
+          read_at?: string | null
+          receiver_id: string
+          sender_id: string
+        }
+        Update: {
+          content?: string
+          created_at?: string
+          id?: string
+          read_at?: string | null
+          receiver_id?: string
+          sender_id?: string
+        }
+        Relationships: []
+      }
+      offres: {
+        Row: {
+          code_postal: string | null
+          competences_requises: string[] | null
+          created_at: string
+          created_by: string | null
+          date_expiration: string | null
+          date_publication: string | null
+          description: string | null
+          domaine: string | null
+          entreprise: string | null
+          id: string
+          id_externe: string | null
+          lien_candidature: string | null
+          lieu: string | null
+          salaire: string | null
+          source: string | null
+          statut: string | null
+          titre: string
+          type_contrat: string | null
+          updated_at: string
+          ville: string | null
+        }
+        Insert: {
+          code_postal?: string | null
+          competences_requises?: string[] | null
+          created_at?: string
+          created_by?: string | null
+          date_expiration?: string | null
+          date_publication?: string | null
+          description?: string | null
+          domaine?: string | null
+          entreprise?: string | null
+          id?: string
+          id_externe?: string | null
+          lien_candidature?: string | null
+          lieu?: string | null
+          salaire?: string | null
+          source?: string | null
+          statut?: string | null
+          titre: string
+          type_contrat?: string | null
+          updated_at?: string
+          ville?: string | null
+        }
+        Update: {
+          code_postal?: string | null
+          competences_requises?: string[] | null
+          created_at?: string
+          created_by?: string | null
+          date_expiration?: string | null
+          date_publication?: string | null
+          description?: string | null
+          domaine?: string | null
+          entreprise?: string | null
+          id?: string
+          id_externe?: string | null
+          lien_candidature?: string | null
+          lieu?: string | null
+          salaire?: string | null
+          source?: string | null
+          statut?: string | null
+          titre?: string
+          type_contrat?: string | null
+          updated_at?: string
+          ville?: string | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          adresse: string | null
+          avatar_url: string | null
+          code_postal: string | null
+          created_at: string
+          email: string
+          id: string
+          nom: string | null
+          onboarding_completed: boolean | null
+          prenom: string | null
+          telephone: string | null
+          updated_at: string
+          user_id: string
+          ville: string | null
+        }
+        Insert: {
+          adresse?: string | null
+          avatar_url?: string | null
+          code_postal?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          nom?: string | null
+          onboarding_completed?: boolean | null
+          prenom?: string | null
+          telephone?: string | null
+          updated_at?: string
+          user_id: string
+          ville?: string | null
+        }
+        Update: {
+          adresse?: string | null
+          avatar_url?: string | null
+          code_postal?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          nom?: string | null
+          onboarding_completed?: boolean | null
+          prenom?: string | null
+          telephone?: string | null
+          updated_at?: string
+          user_id?: string
+          ville?: string | null
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_user_role: {
+        Args: { _user_id: string }
+        Returns: Database["public"]["Enums"]["app_role"]
+      }
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      log_activity: {
+        Args: {
+          _details?: Json
+          _type_action: Database["public"]["Enums"]["activity_type"]
+          _user_id: string
+          _visible_candidat?: boolean
+        }
+        Returns: string
+      }
     }
     Enums: {
-      [_ in never]: never
+      activity_type:
+        | "PROFILE_CREATED"
+        | "CV_PARSED"
+        | "OFFER_IMPORTED"
+        | "OFFER_SUGGESTED"
+        | "OFFER_APPROVED"
+        | "APPLICATION_SENT"
+        | "INTERVIEW_SCHEDULED"
+        | "PROFILE_UPDATED"
+        | "MESSAGE_SENT"
+        | "LOGIN"
+        | "SUBSCRIPTION_CHANGED"
+      app_role: "candidat" | "assistant" | "recruteur" | "admin"
+      candidature_statut:
+        | "proposee"
+        | "approuvee"
+        | "envoyee"
+        | "entretien"
+        | "refusee"
+        | "abandonnee"
+      service_mode: "autonome" | "assiste" | "delegation"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +599,30 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      activity_type: [
+        "PROFILE_CREATED",
+        "CV_PARSED",
+        "OFFER_IMPORTED",
+        "OFFER_SUGGESTED",
+        "OFFER_APPROVED",
+        "APPLICATION_SENT",
+        "INTERVIEW_SCHEDULED",
+        "PROFILE_UPDATED",
+        "MESSAGE_SENT",
+        "LOGIN",
+        "SUBSCRIPTION_CHANGED",
+      ],
+      app_role: ["candidat", "assistant", "recruteur", "admin"],
+      candidature_statut: [
+        "proposee",
+        "approuvee",
+        "envoyee",
+        "entretien",
+        "refusee",
+        "abandonnee",
+      ],
+      service_mode: ["autonome", "assiste", "delegation"],
+    },
   },
 } as const
