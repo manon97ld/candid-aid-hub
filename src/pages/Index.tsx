@@ -1,4 +1,5 @@
 import Header from "@/components/landing/Header";
+import { WelcomeAgent } from "@/components/WelcomeAgent";
 import HeroSection from "@/components/landing/HeroSection";
 import PainPointsSection from "@/components/landing/PainPointsSection";
 import SolutionSection from "@/components/landing/SolutionSection";
