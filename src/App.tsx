@@ -34,9 +34,9 @@ const App = () => (
             <Route path="/inscription" element={<Inscription />} />
             <Route path="/auth" element={<Auth />} />
             
-            {/* Protected app routes */}
+            {/* App routes - accessible sans auth pour dev/demo */}
             <Route path="/app" element={
-              <ProtectedRoute>
+              <ProtectedRoute requireAuth={false}>
                 <AppLayout />
               </ProtectedRoute>
             }>
@@ -50,40 +50,16 @@ const App = () => (
               <Route path="settings" element={<CandidatDashboard />} />
               
               {/* Assistant routes */}
-              <Route path="assistant" element={
-                <ProtectedRoute allowedRoles={["assistant", "admin"]}>
-                  <AssistantDashboard />
-                </ProtectedRoute>
-              } />
-              <Route path="assistant/*" element={
-                <ProtectedRoute allowedRoles={["assistant", "admin"]}>
-                  <AssistantDashboard />
-                </ProtectedRoute>
-              } />
+              <Route path="assistant" element={<AssistantDashboard />} />
+              <Route path="assistant/*" element={<AssistantDashboard />} />
               
               {/* Recruteur routes */}
-              <Route path="recruteur" element={
-                <ProtectedRoute allowedRoles={["recruteur", "admin"]}>
-                  <RecruteurDashboard />
-                </ProtectedRoute>
-              } />
-              <Route path="recruteur/*" element={
-                <ProtectedRoute allowedRoles={["recruteur", "admin"]}>
-                  <RecruteurDashboard />
-                </ProtectedRoute>
-              } />
+              <Route path="recruteur" element={<RecruteurDashboard />} />
+              <Route path="recruteur/*" element={<RecruteurDashboard />} />
               
               {/* Admin routes */}
-              <Route path="admin" element={
-                <ProtectedRoute allowedRoles={["admin"]}>
-                  <AdminDashboard />
-                </ProtectedRoute>
-              } />
-              <Route path="admin/*" element={
-                <ProtectedRoute allowedRoles={["admin"]}>
-                  <AdminDashboard />
-                </ProtectedRoute>
-              } />
+              <Route path="admin" element={<AdminDashboard />} />
+              <Route path="admin/*" element={<AdminDashboard />} />
             </Route>
             
             <Route path="*" element={<NotFound />} />

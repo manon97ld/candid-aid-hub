@@ -42,31 +42,31 @@ const ContactSection = () => {
             <h3 className="font-semibold text-navy mb-4">Contacte-nous directement</h3>
             
             <div className="grid sm:grid-cols-2 gap-4">
-              <a href="tel:0488062078" className="contact-btn contact-btn-primary">
+              <a href="tel:0456962073" className="contact-btn contact-btn-primary">
                 <Phone className="w-5 h-5" />
                 <div>
                   <span className="font-medium">Appeler</span>
-                  <p className="text-xs opacity-80">0488 06 20 78</p>
+                  <p className="text-xs opacity-80">0456 96 20 73</p>
                 </div>
               </a>
 
-              <a href="https://wa.me/32488062078" target="_blank" rel="noopener noreferrer" className="contact-btn contact-btn-whatsapp">
+              <a href="https://wa.me/32456962073" target="_blank" rel="noopener noreferrer" className="contact-btn contact-btn-whatsapp">
                 <MessageCircle className="w-5 h-5" />
                 <div>
                   <span className="font-medium">WhatsApp</span>
-                  <p className="text-xs opacity-80">0488 06 20 78</p>
+                  <p className="text-xs opacity-80">0456 96 20 73</p>
                 </div>
               </a>
 
-              <a href="mailto:info@candidaideemploi.be" className="contact-btn contact-btn-email">
+              <a href="mailto:contact@candidaideemploi.com" className="contact-btn contact-btn-email">
                 <Mail className="w-5 h-5" />
                 <div>
                   <span className="font-medium">Email</span>
-                  <p className="text-xs opacity-80">info@candidaideemploi.be</p>
+                  <p className="text-xs opacity-80">contact@candidaideemploi.com</p>
                 </div>
               </a>
 
-              <a href="https://facebook.com/candidaide" target="_blank" rel="noopener noreferrer" className="contact-btn contact-btn-facebook">
+              <a href="https://facebook.com/candidaideemploi" target="_blank" rel="noopener noreferrer" className="contact-btn contact-btn-facebook">
                 <Facebook className="w-5 h-5" />
                 <div>
                   <span className="font-medium">Facebook</span>

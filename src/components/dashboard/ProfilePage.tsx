@@ -17,21 +17,62 @@ import { Progress } from "@/components/ui/progress";
 import { useAuth } from "@/contexts/AuthContext";
 import { useSubscription } from "@/hooks/useSubscription";
 import { toast } from "sonner";
+import { supabase } from "@/integrations/supabase/client";
+import { useEffect } from "react";
+
+interface ProfileData {
+  prenom: string;
+  nom: string;
+  email: string;
+  telephone: string;
+  adresse: string;
+  ville: string;
+  code_postal: string;
+  avatar_url?: string;
+}
 
 export function ProfilePage() {
-  const { user, profile, signOut } = useAuth();
+  const { user, signOut } = useAuth();
   const { status, openCustomerPortal, loading: subLoading } = useSubscription();
   
   const [isEditing, setIsEditing] = useState(false);
-  const [formData, setFormData] = useState({
-    prenom: profile?.prenom || "",
-    nom: profile?.nom || "",
-    email: profile?.email || user?.email || "",
-    telephone: profile?.telephone || "",
-    adresse: profile?.adresse || "",
-    ville: profile?.ville || "",
-    code_postal: profile?.code_postal || "",
+  const [profile, setProfile] = useState<ProfileData | null>(null);
+  const [formData, setFormData] = useState<ProfileData>({
+    prenom: "",
+    nom: "",
+    email: user?.email || "",
+    telephone: "",
+    adresse: "",
+    ville: "",
+    code_postal: "",
   });
+
+  useEffect(() => {
+    async function loadProfile() {
+      if (!user) return;
+      
+      const { data } = await supabase
+        .from("profiles")
+        .select("*")
+        .eq("user_id", user.id)
+        .single();
+      
+      if (data) {
+        setProfile(data);
+        setFormData({
+          prenom: data.prenom || "",
+          nom: data.nom || "",
+          email: data.email || user.email || "",
+          telephone: data.telephone || "",
+          adresse: data.adresse || "",
+          ville: data.ville || "",
+          code_postal: data.code_postal || "",
+          avatar_url: data.avatar_url || "",
+        });
+      }
+    }
+    loadProfile();
+  }, [user]);
 
   const [notifications, setNotifications] = useState({
     email_offres: true,
