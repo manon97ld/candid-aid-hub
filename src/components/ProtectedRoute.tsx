@@ -7,9 +7,10 @@ type AppRole = "candidat" | "assistant" | "recruteur" | "admin";
 interface ProtectedRouteProps {
   children: React.ReactNode;
   allowedRoles?: AppRole[];
+  requireAuth?: boolean;
 }
 
-export function ProtectedRoute({ children, allowedRoles }: ProtectedRouteProps) {
+export function ProtectedRoute({ children, allowedRoles, requireAuth = true }: ProtectedRouteProps) {
   const { user, role, isLoading } = useAuth();
   const location = useLocation();
 
@@ -19,6 +20,11 @@ export function ProtectedRoute({ children, allowedRoles }: ProtectedRouteProps) 
         <Loader2 className="w-8 h-8 animate-spin text-gold" />
       </div>
     );
+  }
+
+  // Si l'auth n'est pas requise, on laisse passer
+  if (!requireAuth) {
+    return <>{children}</>;
   }
 
   if (!user) {
